@@ -336,19 +336,17 @@ if len(selected_week) > 1:
     typeweek = 'Weeks:'
 else:
     typeweek = 'Week:'
-st.subheader(f'{qb_name} Passing Chart')
 id = int(ids['espn_id'])
 if id:
     display_player_image(id,500,f'{qb_name}')
 st.subheader(f'Season: {selected_season}')
-st.subheader('Season Totals')
 st.subheader(f'Completions/Attempts: {complete_count}/{total_passes}')
 st.subheader(f'Completion Percentage: {round((complete_count/total_passes)*100,2)}%')
 st.subheader(f'Touchdowns: {touchdown_count}')
 st.subheader(f'Interceptions: {interception_count}')
 st.subheader(f'Passing Yards: {int(yards)}')
 st.markdown(
-    f"<h2 style='text-align: center; font-size: 40px;'>{typeweek} {weekstr}</h2>", 
+    f"<h2 style='text-align: center; font-size: 30px;'>{qb_name} Passing Chart For {typeweek} {weekstr}</h2>", 
     unsafe_allow_html=True
 )
 
