@@ -341,7 +341,16 @@ id = int(ids['espn_id'])
 if id:
     display_player_image(id,500,f'{qb_name}')
 st.subheader(f'Season: {selected_season}')
-st.subheader(f'{typeweek} {weekstr}')
+st.subheader('Season Totals')
+st.subheader(f'Completions/Attempts: {complete_count}/{total_passes}')
+st.subheader(f'Completion Percentage: {round((complete_count/total_passes)*100,2)}%')
+st.subheader(f'Touchdowns: {touchdown_count}')
+st.subheader(f'Interceptions: {interception_count}')
+st.subheader(f'Passing Yards: {int(yards)}')
+st.markdown(
+    f"<h2 style='text-align: center; font-size: 40px;'>{typeweek} {weekstr}</h2>", 
+    unsafe_allow_html=True
+)
 
 st.plotly_chart(fig,use_container_width=True)
 # Create a list of metrics
@@ -381,14 +390,7 @@ col1, col2 = st.columns(2)
 # Show the plot in Streamlit
 with col1:
     st.plotly_chart(fig)
-coli1, coli2 = st.columns(2)
-with coli1:
-    st.subheader('Season Totals')
-    st.subheader(f'Completions/Attempts: {complete_count}/{total_passes}')
-    st.subheader(f'Completion Percentage: {round((complete_count/total_passes)*100,2)}%')
-    st.subheader(f'Touchdowns: {touchdown_count}')
-    st.subheader(f'Interceptions: {interception_count}')
-    st.subheader(f'Passing Yards: {int(yards)}')
+    
 
 plt.style.use('dark_background')
 
@@ -476,19 +478,18 @@ for i in range(10,60-1,10):
 
 with col2:
     st.pyplot(fig)
-with coli2:
-    selected_metric = st.selectbox('Select Metric', metrics)
+selected_metric = st.selectbox('Select Metric', metrics)
 
 # Plotly bar graph
-    fig2 = px.bar(
-    nfl2,
-    x='week',
-    y=selected_metric,
-    title=f'Weekly Statistics for {selected_metric.replace("_", " ").title()}',
-    labels={'week': 'Week', selected_metric: selected_metric.replace("_", " ").title()},
-    template='plotly_dark'
-    )
+fig2 = px.bar(
+nfl2,
+x='week',
+y=selected_metric,
+title=f'Weekly Statistics for {selected_metric.replace("_", " ").title()}',
+labels={'week': 'Week', selected_metric: selected_metric.replace("_", " ").title()},
+template='plotly_dark'
+)
 
-    st.plotly_chart(fig2)
+st.plotly_chart(fig2)
 
 
