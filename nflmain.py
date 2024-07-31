@@ -1,8 +1,8 @@
 import streamlit as st
 import plotly.express as px
 import pandas as pd
-from utils.courtCoordinates2 import CourtCoordinates
-from utils.basketballShot2 import BasketballShot
+from courtCoordinates2 import CourtCoordinates
+from basketballShot2 import BasketballShot
 import nfl_data_py as nfl
 import requests
 import seaborn as sns
