@@ -265,7 +265,7 @@ nfl_coordinates = [
     (100, 40, 0),
 ]
 # Plot the coordinates on the field
-df = pd.read_csv('https://raw.githubusercontent.com/ArrowheadAnalytics/next-gen-scrapy-2.0/master/all_pass_locations.csv')
+df = pd.read_csv('nfl_data.csv')
 df['name'] = df['name'].replace('Rayne Prescott', 'Dak Prescott')
 qbs = df['name'].unique()
 qb_name = st.selectbox('Select a quarterback', qbs)
