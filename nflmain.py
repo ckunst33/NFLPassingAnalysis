@@ -8,7 +8,7 @@ import requests
 import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
-st.set_page_config(layout='wide')
+st.set_page_config(page_title="NFL Passing Analyzer",page_icon=🏈,layout='wide')
 def display_player_image(player_id, width2, caption2):
     # Construct the URL for the player image using the player ID
     image_url = f"https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/{player_id}.png&w=350&h=254"
