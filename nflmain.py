@@ -19,12 +19,12 @@ def display_player_image(player_id, width2, caption2):
     if response.status_code == 200:
         # If image is available, display it
         st.markdown(
-        f'<div style="display: flex; flex-direction: column; align-items: center;">'
-        f'<img src="{image_url}" style="width: {width2}px;">'
-        f'<p style="text-align: center;">{caption2}</p>'
-        f'</div>',
-        unsafe_allow_html=True
-    )
+    f'<div style="display: flex; flex-direction: column; align-items: center;">'
+    f'<img src="{image_url}" style="width: {width2}px;">'
+    f'<p style="text-align: center; font-size: 20px;">{caption2}</p>'  # Adjust font-size as needed
+    f'</div>',
+    unsafe_allow_html=True
+)
     
         # st.image(image_url, width=width2, caption=caption2)
     else:
@@ -346,7 +346,7 @@ st.subheader(f'Touchdowns: {touchdown_count}')
 st.subheader(f'Interceptions: {interception_count}')
 st.subheader(f'Passing Yards: {int(yards)}')
 st.markdown(
-    f"<h2 style='text-align: center; font-size: 30px;'>{qb_name} Passing Chart For {typeweek} {weekstr}</h2>", 
+    f"<h2 style='text-align: center; font-size: 30px;'>Passing Chart For {typeweek} {weekstr}</h2>", 
     unsafe_allow_html=True
 )
 
