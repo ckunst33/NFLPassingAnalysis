@@ -21,7 +21,7 @@ def display_player_image(player_id, width2, caption2):
         st.markdown(
     f'<div style="display: flex; flex-direction: column; align-items: center;">'
     f'<img src="{image_url}" style="width: {width2}px;">'
-    f'<p style="text-align: center; font-size: 20px;">{caption2}</p>'  # Adjust font-size as needed
+    f'<p style="text-align: center; font-size: 30px;">{caption2}</p>'  # Adjust font-size as needed
     f'</div>',
     unsafe_allow_html=True
 )
