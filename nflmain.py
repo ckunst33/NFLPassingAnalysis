@@ -214,7 +214,7 @@ def draw_football_field():
     #     hovertext='QB'
 
 
-    ))
+    # ))
    
     fig.add_trace(go.Scatter3d(
         x=[-field_width/2, field_width/2],
