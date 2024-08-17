@@ -96,7 +96,7 @@ fieldtype = st.selectbox('Field Type',['NextGen','Grass'])
 if fieldtype == 'Grass':
     fieldcol = 'green'
     linecol = 'white'
-    qbcol = '#4E3A2A
+    qbcol = '#4E3A2A'
 else:
     fieldcol = '#2C2C2C'
     linecol = 'grey'
