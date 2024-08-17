@@ -270,7 +270,7 @@ if random:
         else:
             x_values2.append(randint(-7,7))
 
-        y_values2.append(randint(-8,-5))
+        y_values2.append(randint(-11,-5))
         z_values2.append(0)
 else:
     x_coordinate = st.number_input(
