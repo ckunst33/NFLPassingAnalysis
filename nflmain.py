@@ -92,7 +92,7 @@ touchdown_count = nfl2['pass_touchdowns'].sum()
 total_passes = nfl2['attempts'].sum()
 yards = nfl2['pass_yards'].sum()
 colortype = st.selectbox('Color Scheme',['Completion/Incompletion','Week','Team Colors'])
-fieldtype = st.selectbox('Field Type',['Field Type','NextGen','Grass'])
+fieldtype = st.selectbox('Field Type',['NextGen','Grass'])
 if fieldtype == 'Grass':
     fieldcol = 'green'
     linecol = 'white'
