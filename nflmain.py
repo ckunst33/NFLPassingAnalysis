@@ -261,24 +261,39 @@ for index, row in df2.iterrows():
 x_values2 = []
 y_values2 = []
 z_values2 = []
-x_coordinate = st.number_input(
+random = st.checkbox('Random QB Locations')
+if random:
+    for index, row in df2.iterrows():
+        # Append the value from column 'x' to the list
+        if abs(row['y']) < 5:
+            x_values2.append(randint(-5,5))
+        else:
+            x_values2.append(randint(-7,7))
+
+        y_values2.append(randint(-8,-5))
+        z_values2.append(0)
+else:
+    x_coordinate = st.number_input(
     'Enter QB x coordinate',
     value=0.0,
     min_value=-25.0,  # Minimum value for x coordinate
     max_value=25.0    # Maximum value for x coordinate
-)
+    )
+    
+    y_coordinate = st.number_input(
+        'Enter QB y coordinate',
+        value=-8.0,
+        min_value=-10.0,  # Minimum value for y coordinate
+        max_value=0.0     # Maximum value for y coordinate
+    )
+    for index, row in df2.iterrows():
+        # Append the value from column 'x' to the list
+        
+        x_values2.append(x_coordinate)
 
-y_coordinate = st.number_input(
-    'Enter QB y coordinate',
-    value=-8.0,
-    min_value=-10.0,  # Minimum value for y coordinate
-    max_value=0.0     # Maximum value for y coordinate
-)
-for index, row in df2.iterrows():
-    # Append the value from column 'x' to the list
-    x_values2.append(x_coordinate)
-    y_values2.append(y_coordinate)
-    z_values2.append(0)
+        y_values2.append(y_coordinate)
+        z_values2.append(2.5)
+
 # # Loop through each row in the 'location' column
 
 import numpy as np
@@ -432,9 +447,9 @@ for i in range(len(df2)):
     
     # Add start and end points
     fig.add_trace(go.Scatter3d(
-        x=[p1[0], p2[0]],
-        y=[p1[1], p2[1]],
-        z=[p1[2], p2[2]],
+        x=[p2[0], p2[0]],
+        y=[p2[1], p2[1]],
+        z=[p2[2], p2[2]],
         mode='markers',
         marker=dict(size=8, symbol='circle-open',color=col),
         name=f'Endpoints {i + 1}',
@@ -442,11 +457,11 @@ for i in range(len(df2)):
         hovertext=hovertext[i]  # Provide hovertext as a list
     ))
     fig.add_trace(go.Scatter3d(
-        x=[p1[0], p2[0]],
-        y=[p1[1], p2[1]],
-        z=[p1[2], p2[2]],
+        x=[p2[0], p2[0]],
+        y=[p2[1], p2[1]],
+        z=[p2[2], p2[2]],
         mode='markers',
-        marker=dict(size=4, symbol='circle',color=col),
+        marker=dict(size=5, symbol='circle',color=col),
         name=f'Endpoints {i + 1}',
         hoverinfo='text',
         hovertext=hovertext[i]  # Provide hovertext as a list
