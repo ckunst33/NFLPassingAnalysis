@@ -257,7 +257,7 @@ z_values2 = []
 for index, row in df2.iterrows():
     # Append the value from column 'x' to the list
     x_values2.append(0)
-    y_values2.append(0)
+    y_values2.append(-5)
     z_values2.append(0)
 # # Loop through each row in the 'location' column
 
