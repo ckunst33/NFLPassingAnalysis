@@ -403,7 +403,7 @@ for i in range(len(df2)):
     y1 = y_coords[i]
     x2 = x_coords2[i]
     y2 = y_coords2[i]
-    z_value2 = 3
+    z_value2 = 0
     # Define the start and end points
     p2 = np.array([x1, y1, z_value])
     p1 = np.array([x2, y2, z_value2])
