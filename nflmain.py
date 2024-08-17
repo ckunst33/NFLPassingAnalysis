@@ -199,7 +199,7 @@ def draw_football_field():
         ))
     fig.add_trace(go.Scatter3d(
         x=[0, 0],
-        y=[0, 0],
+        y=[-5, -5],
         z=[1, 1],
         mode='markers',
         marker=dict(size=10, color='#4E3A2A'),
