@@ -261,7 +261,7 @@ y_values2 = []
 z_values2 = []
 for index, row in df2.iterrows():
     # Append the value from column 'x' to the list
-    x_values2.append(randint(-5,5))
+    x_values2.append(0)
     y_values2.append(-8)
     z_values2.append(0)
 # # Loop through each row in the 'location' column
@@ -373,7 +373,7 @@ for i in range(len(df2)):
     y1 = y_coords[i]
     x2 = x_coords2[i]
     y2 = y_coords2[i]
-    z_value2 = 2.5
+    z_value2 = 3
     # Define the start and end points
     p2 = np.array([x1, y1, z_value])
     p1 = np.array([x2, y2, z_value2])
