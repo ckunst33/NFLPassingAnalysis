@@ -96,9 +96,11 @@ fieldtype = st.selectbox('Field Type',['NextGen','Grass'])
 if fieldtype == 'Grass':
     fieldcol = 'green'
     linecol = 'white'
+    qbcol = '#4E3A2A
 else:
     fieldcol = '#2C2C2C'
     linecol = 'grey'
+    qbcol = 'white'
 
 
 def draw_football_field():
@@ -207,7 +209,7 @@ def draw_football_field():
         y=[y_coordinate, y_coordinate],
         z=[3, 3],
         mode='markers',
-        marker=dict(size=12, color='#4E3A2A',symbol='star'),
+        marker=dict(size=12, color=qbcol,symbol='diamond'),
         hoverinfo='text',
         hovertext='QB'
 
