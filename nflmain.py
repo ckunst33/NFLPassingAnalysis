@@ -292,7 +292,7 @@ else:
         x_values2.append(x_coordinate)
 
         y_values2.append(y_coordinate)
-        z_values2.append(2.5)
+        z_values2.append(0)
 
 # # Loop through each row in the 'location' column
 
