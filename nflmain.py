@@ -334,9 +334,9 @@ for i in range(len(df2)):
     # Apex will be above the line connecting p1 and p2
     distance = calculate_distance(x1, y1, x2, y2)
     if distance > 50:
-        h = randint(28,29)
+        h = randint(28,33)
     elif distance > 40:
-        h = randint(24,25)
+        h = randint(24,27)
     elif distance > 30:
         h = randint(21,22)
     elif distance > 20:
