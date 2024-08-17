@@ -77,7 +77,7 @@ selected_season = st.selectbox('Select a season',seasons)
 df = df[df['season']==selected_season]
 weeks = df['week'].unique()
 weeks.sort()
-selected_week = st.multiselect('Select a week', weeks,default=weeks)
+selected_week = st.multiselect('Select a week', weeks,default=1)
 df = df[df['week'].isin(selected_week)]
 passes = df['pass_type'].unique()
 filter = st.multiselect('Filter by:', passes,default=passes)
