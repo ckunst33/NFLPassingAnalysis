@@ -470,7 +470,6 @@ for i in range(len(df2)):
 
 # Update layout
 fig.update_layout(
-    title='3D Arcs Plot',
     scene=dict(
         xaxis_title='X',
         yaxis_title='Y',
