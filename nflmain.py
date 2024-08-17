@@ -199,7 +199,7 @@ def draw_football_field():
         ))
     fig.add_trace(go.Scatter3d(
         x=[0, 0],
-        y=[-5, -5],
+        y=[-8, -8],
         z=[1, 1],
         mode='markers',
         marker=dict(size=10, color='#4E3A2A'),
@@ -257,7 +257,7 @@ z_values2 = []
 for index, row in df2.iterrows():
     # Append the value from column 'x' to the list
     x_values2.append(0)
-    y_values2.append(-5)
+    y_values2.append(-8)
     z_values2.append(0)
 # # Loop through each row in the 'location' column
 
