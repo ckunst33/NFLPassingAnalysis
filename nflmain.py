@@ -62,7 +62,7 @@ nfl_coordinates = [
     (100, 40, 0),
 ]
 # Plot the coordinates on the field
-df = pd.read_csv('/Users/ryan/Desktop/FantasyPython/nfl_data.csv')
+df = pd.read_csv('nfl_data.csv')
 df['name'] = df['name'].replace('Rayne Prescott', 'Dak Prescott')
 qbs = df['name'].unique()
 qb_name = st.selectbox('Select a quarterback', qbs)
