@@ -543,6 +543,7 @@ if len(selected_week) > 1:
     typeweek = 'Weeks:'
 else:
     typeweek = 'Week:'
+st.warning('Please note that these are not the actual pass locations, as I don’t have access to that data. However, the catch locations are accurate.')
 st.subheader(f'{qb_name} Passing Chart')
 id = int(ids['espn_id'])
 if id:
