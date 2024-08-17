@@ -203,8 +203,8 @@ def draw_football_field():
             hovertext=sign + str(j)
         ))
     fig.add_trace(go.Scatter3d(
-        x=[0, 0],
-        y=[-8, -8],
+        x=[x_coordinate, x_coordinate],
+        y=[y_coordinate, y_coordinate],
         z=[3, 3],
         mode='markers',
         marker=dict(size=10, color='#4E3A2A'),
