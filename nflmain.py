@@ -204,14 +204,14 @@ def draw_football_field():
             hoverinfo='text',
             hovertext=sign + str(j)
         ))
-    fig.add_trace(go.Scatter3d(
-        x=[x_coordinate, x_coordinate],
-        y=[y_coordinate, y_coordinate],
-        z=[3, 3],
-        mode='markers',
-        marker=dict(size=12, color=qbcol,symbol='diamond'),
-        hoverinfo='text',
-        hovertext='QB'
+    # fig.add_trace(go.Scatter3d(
+    #     x=[x_coordinate, x_coordinate],
+    #     y=[y_coordinate, y_coordinate],
+    #     z=[3, 3],
+    #     mode='markers',
+    #     marker=dict(size=12, color=qbcol,symbol='diamond'),
+    #     hoverinfo='text',
+    #     hovertext='QB'
 
 
     ))
