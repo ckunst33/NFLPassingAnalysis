@@ -100,7 +100,7 @@ if fieldtype == 'Grass':
 else:
     fieldcol = '#2C2C2C'
     linecol = 'grey'
-    qbcol = 'white'
+    qbcol = 'gold'
 
 
 def draw_football_field():
