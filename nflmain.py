@@ -207,7 +207,7 @@ def draw_football_field():
         y=[y_coordinate, y_coordinate],
         z=[3, 3],
         mode='markers',
-        marker=dict(size=10, color='#4E3A2A'),
+        marker=dict(size=15, color='#4E3A2A'),
         hoverinfo='text',
         hovertext='QB'
 
