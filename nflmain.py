@@ -91,7 +91,14 @@ interception_count = nfl2['interceptions'].sum()
 touchdown_count = nfl2['pass_touchdowns'].sum()
 total_passes = nfl2['attempts'].sum()
 yards = nfl2['pass_yards'].sum()
-
+colortype = st.selectbox('Color Scheme',['Completion/Incompletion','Week','Team Colors'])
+fieldtype = st.selectbox('Field Type',['Field Type','NextGen','Grass'])
+if fieldtype == 'Grass':
+    fieldcol = 'green'
+    linecol = 'white'
+else:
+    fieldcol = '#2C2C2C'
+    linecol = 'grey'
 
 
 def draw_football_field():
@@ -148,7 +155,7 @@ def draw_football_field():
             y=[i, i],
             z=[0, 0],
             mode='lines',
-            line=dict(color='grey', width=1.5, dash='solid'),
+            line=dict(color=linecol, width=1.5, dash='solid'),
             showlegend=False,
             hoverinfo='none'
         ))
@@ -162,7 +169,7 @@ def draw_football_field():
             y=[i, i],
             z=[0, 0],
             mode='lines',
-            line=dict(color='grey', width=4, dash='solid'),
+            line=dict(color=linecol, width=4, dash='solid'),
             showlegend=False,
             hoverinfo='none'
         ))
@@ -173,7 +180,7 @@ def draw_football_field():
             y=[j, j],
             z=[0, 0],
             mode='text',
-            marker=dict(size=0, color='grey'),
+            marker=dict(size=0, color=linecol),
             text=['-', '-'],
             textposition='top center',
             showlegend=False,
@@ -188,7 +195,7 @@ def draw_football_field():
             y=[j,j],
             z=[0, 0],
             mode='text',
-            marker=dict(size=0, color='grey'),
+            marker=dict(size=0, color=linecol),
             text=['-', '-'],
             # textposition='top center',
             showlegend=False,
@@ -259,7 +266,6 @@ for index, row in df2.iterrows():
     z_values2.append(0)
 # # Loop through each row in the 'location' column
 
-colortype = st.selectbox('Color Scheme',['Completion/Incompletion','Week','Team Colors'])
 import numpy as np
 import plotly.graph_objects as go
 import streamlit as st
@@ -468,7 +474,7 @@ fig.update_layout(
             title='',
             range=[0, 18],
               showbackground=True,
-                backgroundcolor='#2C2C2C',
+                backgroundcolor=fieldcol,
                 showticklabels=False,
                 showgrid=False,
  # Set the range for the z-axis
