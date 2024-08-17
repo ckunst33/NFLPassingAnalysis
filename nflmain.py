@@ -423,7 +423,7 @@ for i in range(len(df2)):
     else: 
         h = 11.5
     if distance < 10:
-        h = distance
+        h = distance*1.5
     apex = np.array([0.5 * (x1 + x2), 0.5 * (y1 + y2), h])  # Adjust apex height as needed
     
     # Generate arc points
