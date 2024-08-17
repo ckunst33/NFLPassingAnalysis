@@ -259,10 +259,23 @@ for index, row in df2.iterrows():
 x_values2 = []
 y_values2 = []
 z_values2 = []
+x_coordinate = st.number_input(
+    'Enter x coordinate',
+    value=0,
+    min_value=-25.0,  # Minimum value for x coordinate
+    max_value=25.0    # Maximum value for x coordinate
+)
+
+y_coordinate = st.number_input(
+    'Enter y coordinate',
+    value=-8,
+    min_value=-10.0,  # Minimum value for y coordinate
+    max_value=0.0     # Maximum value for y coordinate
+)
 for index, row in df2.iterrows():
     # Append the value from column 'x' to the list
-    x_values2.append(0)
-    y_values2.append(-8)
+    x_values2.append(x_coordinate)
+    y_values2.append(y_coordinate)
     z_values2.append(0)
 # # Loop through each row in the 'location' column
 
