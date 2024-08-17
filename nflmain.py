@@ -83,7 +83,6 @@ passes = df['pass_type'].unique()
 filter = st.multiselect('Filter by:', passes,default=passes)
 df = df[df['pass_type'].isin(filter)]
 df['team1'] = 'home'
-plot_coordinates(fig, df)
 game_shots_df = df
 nfl2 = nfl.import_ngs_data(stat_type='passing',years=range(selected_season,selected_season+1))
 nfl2 = nfl2[nfl2['player_display_name'] == qb_name]
