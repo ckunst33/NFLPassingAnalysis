@@ -260,14 +260,14 @@ x_values2 = []
 y_values2 = []
 z_values2 = []
 x_coordinate = st.number_input(
-    'Enter x coordinate',
+    'Enter QB x coordinate',
     value=0.0,
     min_value=-25.0,  # Minimum value for x coordinate
     max_value=25.0    # Maximum value for x coordinate
 )
 
 y_coordinate = st.number_input(
-    'Enter y coordinate',
+    'Enter QB y coordinate',
     value=-8.0,
     min_value=-10.0,  # Minimum value for y coordinate
     max_value=0.0     # Maximum value for y coordinate
