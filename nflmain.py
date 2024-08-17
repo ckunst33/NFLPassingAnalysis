@@ -389,7 +389,7 @@ hovertext = [f'Week: {week}: {round(y_value, 2)} Air Yards - {pt}\n' for pt, y_v
 for i in range(len(df2)):
     if df2['pass_type'].iloc[i] == 'TOUCHDOWN':
         col = 'blue'
-    elif df2['pass_type'].iloc[i] == 'INTECEPTION':
+    elif df2['pass_type'].iloc[i] == 'INTERCEPTION':
         col = 'red'
     elif df2['pass_type'].iloc[i] == 'INCOMPLETE':
         col = 'white'
