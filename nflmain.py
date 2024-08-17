@@ -525,7 +525,7 @@ st.plotly_chart(fig,use_container_width=True)
 
 
                             
-# Create a list of metrics
+# List of metrics
 metrics = [
     'avg_time_to_throw',
     'avg_completed_air_yards',
@@ -547,10 +547,8 @@ metrics = [
     'max_air_distance'
 ]
 
-# Dropdown for selecting metric
-
-# Show plot in Streamlit
-# Create the histogram plot
+# Create histogram plot with Seaborn and Matplotlib
+plt.style.use('dark_background')
 fig, ax = plt.subplots()
 sns.histplot(df['y'], kde=False, ax=ax)
 
@@ -558,10 +556,64 @@ sns.histplot(df['y'], kde=False, ax=ax)
 ax.set_xlabel('Air Yards')
 ax.set_ylabel('Frequency')
 ax.set_title('Distribution of Air Yards')
+
 col1, col2 = st.columns(2)
-# Show the plot in Streamlit
 with col1:
-    st.plotly_chart(fig)
+    st.pyplot(fig)  # Use st.pyplot for Matplotlib figures
+
+# Create field plot
+fig, (ax1, ax2) = plt.subplots(1, 2)
+
+qb = df
+
+sns.kdeplot(x=qb.x, y=qb.y, ax=ax1, cmap='gist_heat', shade=True, shade_lowest=False, n_levels=10)
+ax1.set_xlabel('')
+ax1.set_xticks([])
+ax1.set_yticks([])
+ax1.set_ylabel('')
+ax1.set_xlim(-53.3333/2, 53.3333/2)
+ax1.set_ylim(-15,60)
+
+for j in range(-15, 60-1, 1):
+    ax1.annotate('--', (-3.1, j-0.5), ha='center', fontsize=10)
+    ax1.annotate('--', (3.1, j-0.5), ha='center', fontsize=10)
+
+for i in range(-10, 60, 5):
+    ax1.axhline(i, c='w', ls='-', alpha=0.7, lw=1.5)
+
+for i in range(-10, 60, 10):
+    ax1.axhline(i, c='w', ls='-', alpha=1, lw=1.5)
+
+for i in range(10, 60-1, 10):
+    ax1.annotate(str(i), (-12.88, i-1.15), ha='center', fontsize=15, rotation=270)
+    ax1.annotate(str(i), (12.88, i-0.65), ha='center', fontsize=15, rotation=90)
+
+sns.scatterplot(x=qb.x, y=qb.y, ax=ax2)
+ax2.set_xlabel('')
+ax2.set_ylabel('')
+ax2.set_xticks([])
+ax2.set_yticks([])
+ax2.set_xlim(-53.3333/2, 53.3333/2)
+ax2.set_ylim(-15,60)
+
+for j in range(-15, 60, 1):
+    ax2.annotate('--', (-3.1, j-0.5), ha='center', fontsize=10)
+    ax2.annotate('--', (3.1, j-0.5), ha='center', fontsize=10)
+
+for i in range(-10, 60, 5):
+    ax2.axhline(i, c='w', ls='-', alpha=0.7, lw=1.5)
+
+for i in range(-10, 60, 10):
+    ax2.axhline(i, c='w', ls='-', alpha=1, lw=1.5)
+
+for i in range(10, 60-1, 10):
+    ax2.annotate(str(i), (-12.88, i-1.15), ha='center', fontsize=15, rotation=270)
+    ax2.annotate(str(i), (12.88, i-0.65), ha='center', fontsize=15, rotation=90)
+
+with col2:
+    st.pyplot(fig)  # Use st.pyplot for Matplotlib figures
+
+# Display season totals
 coli1, coli2 = st.columns(2)
 with coli1:
     st.subheader('Season Totals')
@@ -571,103 +623,15 @@ with coli1:
     st.subheader(f'Interceptions: {interception_count}')
     st.subheader(f'Passing Yards: {int(yards)}')
 
-plt.style.use('dark_background')
-
-#Set up our subplots
-fig, (ax1, ax2) =plt.subplots(1,2)
-
-
-qb = df
-
-#What we've added here is shading for the densities, but leaving the lowest density area unshaded.
-#I've also added the *n_level* parameter, which allows us to choose how many levels we want to have in our contour. The higher the number here, the smoother the plot will look.
-sns.kdeplot(x=qb.x, y=qb.y, ax=ax1, cmap='gist_heat', shade=True, shade_lowest=False, n_levels=10)
-
-#Set title, remove ticks and labels
-ax1.set_xlabel('')
-ax1.set_xticks([])
-
-ax1.set_yticks([])
-
-ax1.set_ylabel('')
-
-#Remove any part of the plot that is out of bounds
-ax1.set_xlim(-53.3333/2, 53.3333/2)
-
-ax1.set_ylim(-15,60)
-#This makes our scales (x and y) equal (1 pixel in the x direction is the same 'distance' in coordinates as 1 pixel in the y direction)
-
-
-
-
-#Plot all of the field markings (line of scrimmage, hash marks, etc.)
-
-for j in range(-15,60-1,1):
-    ax1.annotate('--', (-3.1,j-0.5),
-                 ha='center',fontsize =10)
-    ax1.annotate('--', (3.1,j-0.5),
-                 ha='center',fontsize =10)
-    
-for i in range(-10,60,5):
-    ax1.axhline(i,c='w',ls='-',alpha=0.7, lw=1.5)
-    
-for i in range(-10,60,10):
-    ax1.axhline(i,c='w',ls='-',alpha=1, lw=1.5)
-    
-for i in range(10,60-1,10):
-    ax1.annotate(str(i), (-12.88,i-1.15),
-            ha='center',fontsize =15,
-                rotation=270)
-    
-    ax1.annotate(str(i), (12.88,i-0.65),
-            ha='center',fontsize =15,
-                rotation=90)
-sns.scatterplot(x=qb.x, y=qb.y, ax=ax2)
-
-ax2.set_xlabel('')
-ax2.set_ylabel('')
-ax2.set_xticks([])
-
-ax2.set_yticks([])
-
-ax2.set_xlim(-53.3333/2, 53.3333/2)
-
-ax2.set_ylim(-15,60)
-
-for j in range(-15,60,1):
-    ax2.annotate('--', (-3.1,j-0.5),
-                 ha='center',fontsize =10)
-    ax2.annotate('--', (3.1,j-0.5),
-                 ha='center',fontsize =10)
-    
-for i in range(-10,60,5):
-    ax2.axhline(i,c='w',ls='-',alpha=0.7, lw=1.5)
-    
-for i in range(-10,60,10):
-    ax2.axhline(i,c='w',ls='-',alpha=1, lw=1.5)
-    
-for i in range(10,60-1,10):
-    ax2.annotate(str(i), (-12.88,i-1.15),
-            ha='center',fontsize =15,
-                rotation=270)
-    
-    ax2.annotate(str(i), (12.88,i-0.65),
-            ha='center',fontsize =15,
-                rotation=90)
-
-with col2:
-    st.pyplot(fig)
+# Plotly bar graph
 with coli2:
     selected_metric = st.selectbox('Select Metric', metrics)
-
-# Plotly bar graph
     fig2 = px.bar(
-    nfl2,
-    x='week',
-    y=selected_metric,
-    title=f'Weekly Statistics for {selected_metric.replace("_", " ").title()}',
-    labels={'week': 'Week', selected_metric: selected_metric.replace("_", " ").title()},
-    template='plotly_dark'
+        nfl2,
+        x='week',
+        y=selected_metric,
+        title=f'Weekly Statistics for {selected_metric.replace("_", " ").title()}',
+        labels={'week': 'Week', selected_metric: selected_metric.replace("_", " ").title()},
+        template='plotly_dark'
     )
-
-    st.plotly_chart(fig2)
+    st.plotly_chart(fig2)  # Use st.plotly_chart for Plotly figures
