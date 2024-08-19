@@ -545,7 +545,7 @@ else:
     typeweek = 'Week:'
 st.warning('Please note that these are not the actual pass locations, as I don’t have access to that data. However, the catch locations are accurate.')
 st.subheader(f'{qb_name} Passing Chart')
-id = int(ids['espn_id'])
+id = int(ids['espn_id'].iloc[0])
 if id:
     display_player_image(id,500,f'{qb_name}')
 st.subheader(f'Season: {selected_season}')
