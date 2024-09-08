@@ -212,7 +212,7 @@ def draw_football_field():
     line=dict(
         color=linecol,  # Line color
         width=2,        # Line width
-        dash='dot'     # Dashed line style
+        dash='dashdot'     # Dashed line style
     ),
     showlegend=False,
     hoverinfo='none'
@@ -225,7 +225,7 @@ def draw_football_field():
     line=dict(
         color=linecol,  # Line color
         width=2,        # Line width
-        dash='dot'     # Dashed line style
+        dash='dashdot'     # Dashed line style
     ),
     showlegend=False,
     hoverinfo='none'
@@ -238,7 +238,7 @@ def draw_football_field():
     line=dict(
         color=linecol,  # Line color
         width=2,        # Line width
-        dash='dot'     # Dashed line style
+        dash='dashdot'     # Dashed line style
     ),
     showlegend=False,
     hoverinfo='none'
@@ -251,7 +251,7 @@ def draw_football_field():
     line=dict(
         color=linecol,  # Line color
         width=2,        # Line width
-        dash='dot'     # Dashed line style
+        dash='dashdot'     # Dashed line style
     ),
     showlegend=False,
     hoverinfo='none'
