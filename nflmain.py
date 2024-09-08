@@ -175,87 +175,87 @@ def draw_football_field():
             showlegend=False,
             hoverinfo='none'
         ))
-    # Add annotations for vertical hash marks
-    # for j in range(-15, 60, 1):
-    #     fig.add_trace(go.Scatter3d(
-    #         x=[-3.1, 3.1],
-    #         y=[j, j],
-    #         z=[0, 0],
-    #         mode='text',
-    #         marker=dict(size=0, color=linecol),
-    #         text=['-', '-'],
-    #         textposition='top center',
-    #         showlegend=False,
-    #         hoverinfo='none'
-    #     ))
-    #     if j <= 0:
-    #         sign = ''
-    #     else:
-    #         sign = '+'
-    #     fig.add_trace(go.Scatter3d(
-    #         x=[-26.5, 26.5],
-    #         y=[j,j],
-    #         z=[0, 0],
-    #         mode='text',
-    #         marker=dict(size=0, color=linecol),
-    #         text=['-', '-'],
-    #         # textposition='top center',
-    #         showlegend=False,
-    #         hoverinfo='text',
-    #         hovertext=sign + str(j)
-    #     ))
-    fig.add_trace(go.Scatter3d(
-    x=[-3.1, -3.1],  # x-coordinates for the vertical line
-    y=[-15, 60],     # y-coordinates from -15 to 60
-    z=[0, 0],        # z-coordinates are the same to keep it vertical in the 3D space
-    mode='lines',    # Use lines to draw a line
-    line=dict(
-        color=linecol,  # Line color
-        width=2,        # Line width
-        dash='dashdot'     # Dashed line style
-    ),
-    showlegend=False,
-    hoverinfo='none'
-))
-    fig.add_trace(go.Scatter3d(
-    x=[3.1, 3.1],  # x-coordinates for the vertical line
-    y=[-15, 60],     # y-coordinates from -15 to 60
-    z=[0, 0],        # z-coordinates are the same to keep it vertical in the 3D space
-    mode='lines',    # Use lines to draw a line
-    line=dict(
-        color=linecol,  # Line color
-        width=2,        # Line width
-        dash='dashdot'     # Dashed line style
-    ),
-    showlegend=False,
-    hoverinfo='none'
-))
-    fig.add_trace(go.Scatter3d(
-    x=[-26.5, -26.5],  # x-coordinates for the vertical line
-    y=[-15, 60],     # y-coordinates from -15 to 60
-    z=[0, 0],        # z-coordinates are the same to keep it vertical in the 3D space
-    mode='lines',    # Use lines to draw a line
-    line=dict(
-        color=linecol,  # Line color
-        width=2,        # Line width
-        dash='dashdot'     # Dashed line style
-    ),
-    showlegend=False,
-    hoverinfo='none'
-))
-    fig.add_trace(go.Scatter3d(
-    x=[26.5, 26.5],  # x-coordinates for the vertical line
-    y=[-15, 60],     # y-coordinates from -15 to 60
-    z=[0, 0],        # z-coordinates are the same to keep it vertical in the 3D space
-    mode='lines',    # Use lines to draw a line
-    line=dict(
-        color=linecol,  # Line color
-        width=2,        # Line width
-        dash='dashdot'     # Dashed line style
-    ),
-    showlegend=False,
-    hoverinfo='none'
-))
+    Add annotations for vertical hash marks
+    for j in range(-15, 60, 1):
+        fig.add_trace(go.Scatter3d(
+            x=[-3.1, 3.1],
+            y=[j, j],
+            z=[0, 0],
+            mode='text',
+            marker=dict(size=0, color=linecol),
+            text=['-', '-'],
+            textposition='top center',
+            showlegend=False,
+            hoverinfo='none'
+        ))
+        if j <= 0:
+            sign = ''
+        else:
+            sign = '+'
+        fig.add_trace(go.Scatter3d(
+            x=[-26.5, 26.5],
+            y=[j,j],
+            z=[0, 0],
+            mode='text',
+            marker=dict(size=0, color=linecol),
+            text=['-', '-'],
+            # textposition='top center',
+            showlegend=False,
+            hoverinfo='text',
+            hovertext=sign + str(j)
+        ))
+#     fig.add_trace(go.Scatter3d(
+#     x=[-3.1, -3.1],  # x-coordinates for the vertical line
+#     y=[-15, 60],     # y-coordinates from -15 to 60
+#     z=[0, 0],        # z-coordinates are the same to keep it vertical in the 3D space
+#     mode='lines',    # Use lines to draw a line
+#     line=dict(
+#         color=linecol,  # Line color
+#         width=2,        # Line width
+#         dash='dashdot'     # Dashed line style
+#     ),
+#     showlegend=False,
+#     hoverinfo='none'
+# ))
+#     fig.add_trace(go.Scatter3d(
+#     x=[3.1, 3.1],  # x-coordinates for the vertical line
+#     y=[-15, 60],     # y-coordinates from -15 to 60
+#     z=[0, 0],        # z-coordinates are the same to keep it vertical in the 3D space
+#     mode='lines',    # Use lines to draw a line
+#     line=dict(
+#         color=linecol,  # Line color
+#         width=2,        # Line width
+#         dash='dashdot'     # Dashed line style
+#     ),
+#     showlegend=False,
+#     hoverinfo='none'
+# ))
+#     fig.add_trace(go.Scatter3d(
+#     x=[-26.5, -26.5],  # x-coordinates for the vertical line
+#     y=[-15, 60],     # y-coordinates from -15 to 60
+#     z=[0, 0],        # z-coordinates are the same to keep it vertical in the 3D space
+#     mode='lines',    # Use lines to draw a line
+#     line=dict(
+#         color=linecol,  # Line color
+#         width=2,        # Line width
+#         dash='dashdot'     # Dashed line style
+#     ),
+#     showlegend=False,
+#     hoverinfo='none'
+# ))
+#     fig.add_trace(go.Scatter3d(
+#     x=[26.5, 26.5],  # x-coordinates for the vertical line
+#     y=[-15, 60],     # y-coordinates from -15 to 60
+#     z=[0, 0],        # z-coordinates are the same to keep it vertical in the 3D space
+#     mode='lines',    # Use lines to draw a line
+#     line=dict(
+#         color=linecol,  # Line color
+#         width=2,        # Line width
+#         dash='dashdot'     # Dashed line style
+#     ),
+#     showlegend=False,
+#     hoverinfo='none'
+# ))
     # fig.add_trace(go.Scatter3d(
     #     x=[x_coordinate, x_coordinate],
     #     y=[y_coordinate, y_coordinate],
