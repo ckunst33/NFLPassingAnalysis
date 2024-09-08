@@ -175,7 +175,7 @@ def draw_football_field():
             showlegend=False,
             hoverinfo='none'
         ))
-    Add annotations for vertical hash marks
+    # Add annotations for vertical hash marks
     for j in range(-15, 60, 1):
         fig.add_trace(go.Scatter3d(
             x=[-3.1, 3.1],
