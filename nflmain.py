@@ -529,6 +529,13 @@ fig.update_layout(
     )
 )
 fig = draw_football_field()
+field_length = 120  # 100 yards + 2 end zones of 10 yards each
+field_width = 53.33  # 53.33 yards wide (160 feet)
+
+# Create the field as a filled rectangle
+field_x = [0, field_length, field_length, 0, 0]
+field_y = [0, 0, field_width, field_width, 0]
+field_z = [0, 0, 0, 0, 0]
 fig.add_trace(go.Mesh3d(
     x=field_x[:4],  # Use the first four points for the mesh (corners of the square)
     y=field_y[:4],  # Same here for y coordinates
