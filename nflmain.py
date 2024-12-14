@@ -529,6 +529,13 @@ fig.update_layout(
     )
 )
 fig = draw_football_field()
+fig.add_trace(go.Mesh3d(
+    x=field_x[:4],  # Use the first four points for the mesh (corners of the square)
+    y=field_y[:4],  # Same here for y coordinates
+    z=field_z[:4],  # Same here for z coordinates
+    color=fieldcol, # Set the color to the variable `fieldcol`
+    hoverinfo='none' # Disable hover information
+))
 fig.update_layout(
      margin=dict(l=20, r=20, t=20, b=20),
         scene_aspectmode="data",
@@ -555,7 +562,7 @@ fig.update_layout(
         zaxis=dict(
             title='',
             range=[0, 18],
-              showbackground=True,
+              showbackground=False,
                 backgroundcolor=fieldcol,
                 showticklabels=False,
                 showgrid=False,
