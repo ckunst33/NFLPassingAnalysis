@@ -180,7 +180,7 @@ def draw_football_field():
         fig.add_trace(go.Scatter3d(
             x=[-3.1, 3.1],
             y=[j, j],
-            z=[0, 0],
+            z=[-0.5, -0.5],
             mode='text',
             marker=dict(size=0, color=linecol),
             text=['-', '-'],
@@ -195,7 +195,7 @@ def draw_football_field():
         fig.add_trace(go.Scatter3d(
             x=[-26.5, 26.5],
             y=[j,j],
-            z=[0, 0],
+            z=[-0.5, -0.5],
             mode='text',
             marker=dict(size=0, color=linecol),
             text=['-', '-'],
