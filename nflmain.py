@@ -533,8 +533,8 @@ field_length = 120  # 100 yards + 2 end zones of 10 yards each
 field_width = 53.33  # 53.33 yards wide (160 feet)
 
 # Create the field as a filled rectangle
-field_x = [0, field_length, field_length, 0, 0]
-field_y = [0, 0, field_width, field_width, 0]
+field_x = [-53.3333/2, 53.3333/2, 53.3333/2, -53.3333/2, -53.3333/2]
+field_y = [-15, -15, 60, 60, -15]
 field_z = [0, 0, 0, 0, 0]
 fig.add_trace(go.Mesh3d(
     x=field_x,     # Use all x-coordinates as provided
