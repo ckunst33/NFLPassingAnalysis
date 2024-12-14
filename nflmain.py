@@ -537,9 +537,9 @@ field_x = [0, field_length, field_length, 0, 0]
 field_y = [0, 0, field_width, field_width, 0]
 field_z = [0, 0, 0, 0, 0]
 fig.add_trace(go.Mesh3d(
-    x=field_x[:4],  # Use the first four points for the mesh (corners of the square)
-    y=field_y[:4],  # Same here for y coordinates
-    z=field_z[:4],  # Same here for z coordinates
+    x=field_x,     # Use all x-coordinates as provided
+    y=field_y,     # Use all y-coordinates as provided
+    z=field_z,     # Use all z-coordinates as provided
     color=fieldcol, # Set the color to the variable `fieldcol`
     hoverinfo='none' # Disable hover information
 ))
